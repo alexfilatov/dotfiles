@@ -9,5 +9,5 @@ else
   echo "Installing dotfiles"
   mkdir -p "$HOME/.dotfiles" && \
   eval "$CMD https://github.com/alexfilatov/dotfiles/tarball/master | tar -xzv -C ~/.dotfiles --strip-components=1 --exclude='{.gitignore}'"
-  . "$HOME/dotfiles/setup.sh"
+  . "$HOME/.dotfiles/setup.sh"
 fi
