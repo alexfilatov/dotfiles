@@ -138,8 +138,8 @@ SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
 
-dir=~/dotfiles                        # dotfiles directory
-dir_backup=~/dotfiles_old             # old dotfiles backup directory
+dir=~/.dotfiles                        # dotfiles directory
+dir_backup=~/.dotfiles_old             # old dotfiles backup directory
 
 # Get current dir (so run this script from anywhere)
 
@@ -163,8 +163,8 @@ echo "done"
 
 # Atom editor settings
 echo -n "Copying Atom settings.."
-mv -f ~/.atom ~/dotfiles_old/
-ln -s $HOME/dotfiles/atom ~/.atom
+mv -f ~/.atom ~/.dotfiles_old/
+ln -s $HOME/.dotfiles/atom ~/.atom
 echo "done"
 
 
@@ -192,11 +192,11 @@ declare -a FILES_TO_SYMLINK=(
 
 # FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim bin" # add in vim and the binaries
 
-# Move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
+# Move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/.dotfiles directory specified in $files
 
 for i in ${FILES_TO_SYMLINK[@]}; do
   echo "Moving any existing dotfiles from ~ to $dir_backup"
-  mv ~/.${i##*/} ~/dotfiles_old/
+  mv ~/.${i##*/} ~/.dotfiles_old/
 done
 
 
@@ -234,7 +234,7 @@ main() {
   unset FILES_TO_SYMLINK
 
   # Copy binaries
-  ln -fs $HOME/dotfiles/bin $HOME
+  ln -fs $HOME/.dotfiles/bin $HOME
 
   declare -a BINARIES=(
     'batcharge.py'
@@ -256,7 +256,7 @@ main() {
   unset BINARIES
 
   # Symlink online-check.sh
-  ln -fs $HOME/dotfiles/lib/online-check.sh $HOME/online-check.sh
+  ln -fs $HOME/.dotfiles/lib/online-check.sh $HOME/online-check.sh
 
   # Write out current crontab
   crontab -l > mycron
@@ -329,7 +329,7 @@ main
 ###############################################################################
 
 # Install Zsh settings
-ln -s ~/dotfiles/zsh/themes/nick.zsh-theme $HOME/.oh-my-zsh/themes
+ln -s ~/.dotfiles/zsh/themes/nick.zsh-theme $HOME/.oh-my-zsh/themes
 
 
 ###############################################################################
@@ -340,7 +340,7 @@ ln -s ~/dotfiles/zsh/themes/nick.zsh-theme $HOME/.oh-my-zsh/themes
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Install the Solarized Dark theme for iTerm
-open "${HOME}/dotfiles/iterm/themes/Solarized Dark.itermcolors"
+open "${HOME}/.dotfiles/iterm/themes/Solarized Dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
