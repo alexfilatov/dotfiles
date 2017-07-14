@@ -10,7 +10,7 @@ dirs_to_prepend=(
   "/usr/local/"
   "/usr/local/mysql/bin"
   "/sw/bin/"
-  "$HOME/dotfiles/bin"
+  "$HOME/.dotfiles/bin"
   "$HOME/bin"
   "$HOME/.rvm/bin"
   "$(brew --prefix ruby)/bin"
@@ -64,7 +64,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=$HOME/dotfiles/zsh
+# ZSH_CUSTOM=$HOME/.dotfiles/zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/

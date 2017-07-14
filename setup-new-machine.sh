@@ -80,15 +80,15 @@ fi
 # Homebrew                                                                    #
 ###############################################################################
 
-$HOME/dotfiles/install/brew.sh
-$HOME/dotfiles/install/brew-cask.sh
+$HOME/.dotfiles/install/brew.sh
+$HOME/.dotfiles/install/brew-cask.sh
 
 
 ###############################################################################
 # Node                                                                        #
 ###############################################################################
 
-$HOME/dotfiles/install/npm.sh
+$HOME/.dotfiles/install/npm.sh
 
 # Type `git open` to open the GitHub page or website for a repository.
 npm install -g git-open
